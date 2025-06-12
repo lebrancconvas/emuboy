@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <title>Emu Boy</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
 <body>
     <canvas id="glcanvas" width="160" height="144"></canvas><br/>
     <button id="pocket">Pocket Demo</button><br/>
     <button id="dangan">Dangan</button><br/>
     <button id="wordyl">Wordyl</button><br/>
-    <div>or</div>    
+    <div>or</div>
     <input id="rom" type="file" />
 </body>
 <script src="./gameboy.js"></script>
@@ -28,7 +33,7 @@
         var uint8View = new Uint8Array(arrayBuffer)
         gameboy.loadRom(uint8View)
     }
-    
+
     document.getElementById('pocket').addEventListener('click', function () { loadRom("pocket.gb") })
     document.getElementById('dangan').addEventListener('click', function () { loadRom("dangan.gb") })
     document.getElementById('wordyl').addEventListener('click', function () { loadRom("wordyl.gb") })
@@ -72,7 +77,7 @@
         if (frameTime < 16 || frameTime > 18)
         console.log('frame:', frameTime)
         frameTimeStamp = nextFrameTimeStamp
-    
+
         frameNumber = frameNumber + 1
 
         buffer = []
